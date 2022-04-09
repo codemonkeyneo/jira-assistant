@@ -23,7 +23,7 @@ export default class DashboardService {
         }
 
         this.saveUserDashboards(dashboard, updateMenu !== true);
-    }
+    };
 
     async saveUserDashboards(dashboard, avoidMenuUpdate) {
         if (!dashboard.id) {
@@ -111,7 +111,7 @@ export default class DashboardService {
     getBoardWithId = (id) => this.$settings.getSetting(this.$session.userId, SettingsCategory.Dashboard, id);
 
     async setAsTabView({ id }, index) {
-        const currentBoard = await this.getBoardWithId(id);
+        const currentBoard = id ? await this.getBoardWithId(id) : this.$session.CurrentUser.dashboards[index];
 
         currentBoard.isTabView = !currentBoard.isTabView;
 
