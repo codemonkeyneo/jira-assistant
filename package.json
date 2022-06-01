@@ -53,7 +53,7 @@
     "jest-resolve": "27.4.2",
     "jest-watch-typeahead": "1.0.0",
     "jquery": "3.6.0",
-    "jsd-report": "0.1.10",
+    "jsd-report": "0.1.11",
     "jspdf": "2.5.1",
     "jspdf-autotable": "3.5.24",
     "mini-css-extract-plugin": "2.4.5",
