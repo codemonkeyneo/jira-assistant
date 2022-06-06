@@ -17,6 +17,8 @@ export const ApiUrls = {
     individualWorklog: "~/rest/api/2/issue/{0}/worklog/{1}",
     searchUser: "~/rest/api/2/user/search?maxResults={1}&startAt={2}&query={0}",
     searchUser_Alt: "~/rest/api/2/user/search?maxResults={1}&startAt={2}&username={0}",
+    searchGroup: "~/rest/api/2/groups/picker?maxResults={1}&query={0}",
+    getGroupMembers: "~/rest/api/2/group/member?maxResults={1}&includeInactiveUsers=true&groupId={0}",
     getCustomFields: "~/rest/api/2/field",
     getJQLAutocomplete: "~/rest/api/2/jql/autocompletedata",
     getJQLSuggestions: "~/rest/api/2/jql/autocompletedata/suggestions",
@@ -166,7 +168,7 @@ export const FULL_DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thur
 
 export const defaultJiraFields = ["issuetype", "summary", "reporter", "priority", "status", "resolution", "created", "updated"];
 
-export const AppVersionNo = 2.34;
+export const AppVersionNo = 2.35;
 
 let AnalyticsTrackingId = "UA-108841109-1"; // This is for public tracking id
 
