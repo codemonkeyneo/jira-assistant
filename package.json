@@ -42,7 +42,7 @@
     "eslint": "8.17.0",
     "eslint-config-react-app": "7.0.1",
     "eslint-webpack-plugin": "3.1.1",
-    "espree": "7.3.1",
+    "espree": "9.3.2",
     "exceljs": "4.3.0",
     "file-loader": "6.2.0",
     "font-awesome": "4.7.0",
