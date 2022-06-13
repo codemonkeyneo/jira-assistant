@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { inject } from '../../../services';
 import { Button, TextBox } from '../../../controls';
-import { ApiUrls } from '../../../_constants';
+import { ApiUrls, ContactUsUrl } from '../../../_constants';
 import { getUserName } from '../../../common/utils';
 
 class Integrate extends PureComponent {
@@ -32,7 +32,7 @@ class Integrate extends PureComponent {
 
     async getUserFromDB(root, name, email) {
         let user = await this.$db.users.where("userId").equalsIgnoreCase(name)
-            .and((u) => { return u.jiraUrl.toLowerCase() === root.toLowerCase(); }).first();
+            .and((u) => u.jiraUrl.toLowerCase() === root.toLowerCase()).first();
 
         if (!user && email) {
             email = email.toLowerCase();
@@ -83,9 +83,7 @@ class Integrate extends PureComponent {
                         user.email = email;
                         user.lastLogin = new Date();
                         this.$db.users.put(user)
-                            .then((id) => {
-                                return user.id;
-                            }, this.handleDBError)
+                            .then((id) => user.id, this.handleDBError)
                             .then(this.openDashboard);
                     }
                 });
@@ -154,7 +152,7 @@ class Integrate extends PureComponent {
                                             </span> |
                                             <span>
                                                 <i className="fa fa-phone" />
-                                                <a href={`https://docs.google.com/forms/d/e/1FAIpQLScJvQtHZI_yZr1xd4Z8TwWgvtFss33hW5nJp4gePCgI2ScNvg/viewform?entry.1426640786=${version}&entry.972533768=${browser}`}
+                                                <a href={`${ContactUsUrl}?entry.1426640786=${version}&entry.972533768=${browser}`}
                                                     target="_blank" rel="noopener noreferrer" title="Click to report about any issues or ask a question"> Contact us</a>
                                             </span>
                                         </div>

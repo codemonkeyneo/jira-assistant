@@ -1,6 +1,6 @@
 {
   "name": "jira-assistant",
-  "version": "2.36.0",
+  "version": "2.37.0",
   "description": "Contains source code for the browser extension Jira Assistant",
   "homepage": "chrome-extension://momjbjbjpbcbnepbgkkiaofkgimihbii/",
   "author": {
@@ -105,6 +105,10 @@
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
+      "arrow-body-style": [
+        "error",
+        "as-needed"
+      ],
       "no-unused-vars": "error",
       "no-unreachable": "error",
       "eqeqeq": "error",
